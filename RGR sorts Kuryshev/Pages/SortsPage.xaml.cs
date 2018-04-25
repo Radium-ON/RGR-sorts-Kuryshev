@@ -112,7 +112,11 @@ namespace RGR_sorts_Kuryshev.Pages
                 left = b;//Сохраним последнюю перестановку как границу
             }
         }
-
+        public static void ArrShellSort(int[] name, out int sravnShellSort, out int swapNumShell)
+        {
+            sravnShellSort = swapNumShell = 0;
+            int j;            int step = name.Length / 2;            while (step > 0)            {                for (int i = 0; i < (name.Length - step); i++)                {                    sravnShellSort++;                    j = i;                    while ((j >= 0) && (name[j] > name[j + step]))                    {                        swapNumShell++;                        int tmp = name[j];                        name[j] = name[j + step];                        name[j + step] = tmp;                        j -= step;                    }                }                step = step / 2;            }        }
+    
         private void DataResultAdd()
         {
             if (flag_bubble && flag_simpleInserts)
@@ -214,19 +218,7 @@ namespace RGR_sorts_Kuryshev.Pages
                         data_secondCollection.Add(new numbers_sort1 { second_arr = arrShakerSort[i] });
                     }
                     flag_bubble = true;//массив уже отсортирован пузырьком
-                    if (flag_bubble && flag_simpleInserts)
-                    {
-                        data_resultsCollection.Add
-                            (
-                            new SortsResultData
-                            {
-                                Amount = arrDefault.Length,
-                                Time_theory = arrDefault.Length * arrDefault.Length,
-                                Time2 = stop1.ElapsedMilliseconds,
-                                Time3 = stop2.ElapsedMilliseconds
-                            }
-                            );
-                    }//если массив отсортирован двумя способами - добавить запись о времени сортировок
+                    DataResultAdd();//если массив отсортирован двумя способами - добавить запись о времени сортировок
                 }
             }
         }
@@ -271,19 +263,10 @@ namespace RGR_sorts_Kuryshev.Pages
                 else
                 {
                     arrShellSort = new int[arrDefault.Length];
-                    stop2.Start();
                     for (int i = 0; i < arrDefault.Length; i++)
-                    {
-                        int j = i;
-                        while (j > 0 && arrShellSort[j - 1] > arrDefault[i])
-                        {
-                            arrShellSort[j] = arrShellSort[j - 1];
-                            j--;
-                            sravnShellSort++;
-                        }
-                        swapNumShell++;
-                        arrShellSort[j] = arrDefault[i];
-                    }
+                        arrShellSort[i] = arrDefault[i];
+                    stop2.Start();
+                    ArrShellSort(arrShellSort,out sravnShellSort,out swapNumShell);
                     stop2.Stop();
                     txt_blck3.Text = "Число сравнений: " + sravnShellSort + Environment.NewLine + "Число обменов: " + swapNumShell + Environment.NewLine + "Затраченное время: " + stop2.ElapsedTicks;
                     for (int i = 0; i < arrShellSort.Length; i++)

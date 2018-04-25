@@ -37,7 +37,7 @@
                                     GotFocus="txt_box_GotFocus" />
 
                     <Button x:Name="buttonGraphics" Margin="5" Grid.Row="1" Grid.Column="2" Content="Графики"        
-                                    Click="buttonGraphics_Click"/>
+                                    Click="buttonGraphics_Click" Visibility="Hidden"/>
 
                     <Button x:Name="buttonCreateArrDefault" Grid.Column="0" Grid.Row="2" Margin="5" Content="Сформировать"
                                     Click="buttonCreateArrDefault_Click"/>
