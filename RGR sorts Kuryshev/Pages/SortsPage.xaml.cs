@@ -112,7 +112,24 @@ namespace RGR_sorts_Kuryshev.Pages
                 left = b;//Сохраним последнюю перестановку как границу
             }
         }
-        
+
+        private void DataResultAdd()
+        {
+            if (flag_bubble && flag_simpleInserts)
+            {
+                data_resultsCollection.Add
+                    (
+                    new SortsResultData
+                    {
+                        Amount = arrDefault.Length,
+                        Time_theory = arrDefault.Length * arrDefault.Length,
+                        Time2 = stop1.ElapsedTicks,
+                        Time3 = stop2.ElapsedTicks
+                    }
+                    );
+            }
+        }//проверка состояний сортировки
+
         void buttonCreateArrDefault_Click(object sender, RoutedEventArgs e) //"Сформировать" массив из числа элементов
         {
             Clear_all();
@@ -274,22 +291,12 @@ namespace RGR_sorts_Kuryshev.Pages
                         data_thirdCollection.Add(new numbers_sort2 { third_arr = arrShellSort[i] });
                     }
                     flag_simpleInserts = true;
-                    if (flag_bubble && flag_simpleInserts)
-                    {
-                        data_resultsCollection.Add
-                            (
-                            new SortsResultData
-                            {
-                                Amount = arrDefault.Length,
-                                Time_theory = arrDefault.Length * arrDefault.Length,
-                                Time2 = stop1.ElapsedTicks,
-                                Time3 = stop2.ElapsedTicks
-                            }
-                            );
-                    }
+                    DataResultAdd();
                 }
             }
         }
+
+
         void buttonGraphics_Click(object sender, RoutedEventArgs e)
         {
 
