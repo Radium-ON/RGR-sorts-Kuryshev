@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="RGR_sorts_Kuryshev.SortsResultPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="700">
+    <Grid Style="{StaticResource ContentRoot}">
+        <ScrollViewer HorizontalScrollBarVisibility="Visible">
+            <StackPanel MinWidth="200">
+                
+                <!--проследи за DataContext-->
+                <DataGrid Name="data_res" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn
+                            Header="Количество элементов"
+                            Binding="{Binding Path=Amount, ElementName=sortPageTab}"></DataGridTextColumn>
+                            <DataGridTextColumn
+                            Header="Теоретическое время сортировки"
+                            Binding="{Binding Path=Time_theory}"></DataGridTextColumn>
+                            <DataGridTextColumn
+                            Header="Время &quot;Шейкер&quot;-сортировки"
+                            Binding="{Binding Path=Time2}"></DataGridTextColumn>
+                            <DataGridTextColumn
+                            Header="Время сортировки Шелла"
+                            Binding="{Binding Path=Time3}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

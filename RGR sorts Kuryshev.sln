@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RGR sorts Kuryshev", "RGR sorts Kuryshev\RGR sorts Kuryshev.csproj", "{B96F6818-ACB8-476D-8AF5-680CC5D55993}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B96F6818-ACB8-476D-8AF5-680CC5D55993}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B96F6818-ACB8-476D-8AF5-680CC5D55993}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B96F6818-ACB8-476D-8AF5-680CC5D55993}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B96F6818-ACB8-476D-8AF5-680CC5D55993}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1FA4A842-DA04-4B66-B149-6CA99B85A643}
+	EndGlobalSection
+EndGlobal
