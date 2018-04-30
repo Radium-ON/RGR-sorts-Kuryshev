@@ -54,6 +54,7 @@ namespace RGR_sorts_Kuryshev.Pages
             DataGridResults.ItemsSource = data_resultsCollection;
             image.Source = new DrawingImage(draw);
             errorMessage.Title = "Ошибка";
+            Clear_all();
         }
         void Clear_all()
         {
@@ -380,6 +381,28 @@ namespace RGR_sorts_Kuryshev.Pages
         void txt_box_GotFocus(object sender, RoutedEventArgs e)
         {
             txt_box.Text = "";
+        }
+
+        private void dataGridArrDefault_Loaded(object sender, RoutedEventArgs e)
+        {
+            buttonCreateArrDefault_Click(this, null);
+        }
+
+        private void dataGridArrShakerSort_Loaded(object sender, RoutedEventArgs e)
+        {
+            buttonShakerSort_Click(this, null);
+        }
+
+        private void dataGridArrShellSort_Loaded(object sender, RoutedEventArgs e)
+        {
+            buttonShellSort_Click(this, null);
+            Clear_all();
+            txt_box.Clear();
+        }
+
+        private void txt_box_Initialized(object sender, EventArgs e)
+        {
+            txt_box.Text = "10";
         }
     }
 }
