@@ -112,18 +112,18 @@ namespace RGR_sorts_Kuryshev.Pages
                 left = b;//Сохраним последнюю перестановку как границу
             }
         }
-        public static void ArrShellSort(int[] name, out int sravnShellSort, out int swapNumShell)
+        public static void ArrShellSort(int[] name, out int sravnShellSort, out int swapNumShell)//убывающая
         {
             sravnShellSort = swapNumShell = 0;
             int j;
             int step = name.Length / 2;
             while (step > 0)
             {
-                for (int i = 0; i < (name.Length - step); i++)
+                for (int i = 0; i < (name.Length - step); i++)//счётчик шагов
                 {
                     sravnShellSort++;
                     j = i;
-                    while ((j >= 0) && (name[j] > name[j + step]))
+                    while ((j >= 0) && (name[j] < name[j + step]))//счётчик индексов
                     {
                         swapNumShell++;
                         int tmp = name[j];
