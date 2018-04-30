@@ -115,7 +115,26 @@ namespace RGR_sorts_Kuryshev.Pages
         public static void ArrShellSort(int[] name, out int sravnShellSort, out int swapNumShell)
         {
             sravnShellSort = swapNumShell = 0;
-            int j;            int step = name.Length / 2;            while (step > 0)            {                for (int i = 0; i < (name.Length - step); i++)                {                    sravnShellSort++;                    j = i;                    while ((j >= 0) && (name[j] > name[j + step]))                    {                        swapNumShell++;                        int tmp = name[j];                        name[j] = name[j + step];                        name[j + step] = tmp;                        j -= step;                    }                }                step = step / 2;            }        }
+            int j;
+            int step = name.Length / 2;
+            while (step > 0)
+            {
+                for (int i = 0; i < (name.Length - step); i++)
+                {
+                    sravnShellSort++;
+                    j = i;
+                    while ((j >= 0) && (name[j] > name[j + step]))
+                    {
+                        swapNumShell++;
+                        int tmp = name[j];
+                        name[j] = name[j + step];
+                        name[j + step] = tmp;
+                        j -= step;
+                    }
+                }
+                step = step / 2;
+            }
+        }
     
         private void DataResultAdd()
         {
