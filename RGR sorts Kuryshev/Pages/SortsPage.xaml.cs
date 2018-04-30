@@ -54,6 +54,7 @@ namespace RGR_sorts_Kuryshev.Pages
             DataGridResults.ItemsSource = data_resultsCollection;
             image.Source = new DrawingImage(draw);
             errorMessage.Title = "Ошибка";
+            Clear_all();
         }
         void Clear_all()
         {
@@ -381,26 +382,30 @@ namespace RGR_sorts_Kuryshev.Pages
             txt_box.Text = "";
         }
 
-        private void dataGridArrDefault_Loaded(object sender, RoutedEventArgs e)
+        private void dataGridArrDefault_Initialized(object sender, EventArgs e)
         {
-            buttonCreateArrDefault_Click(this, null);
+            arrDefault = new int[10];
+            for (int i = 0; i < 10; i++)
+            {
+                arrDefault[i] = rnd.Next(0, 10001);
+                data_firstCollection.Add(new numbers { first_arr = arrDefault[i] });
+            }
         }
 
-        private void dataGridArrShakerSort_Loaded(object sender, RoutedEventArgs e)
+        private void dataGridArrShakerSort_Initialized(object sender, EventArgs e)
         {
-            buttonShakerSort_Click(this, null);
+            arrShakerSort = new int[10];
+            for (int i = 0; i < 10; i++)
+                arrShakerSort[i] = arrDefault[i];
+            ArrShakerSort(arrShakerSort, out sravnShakerSort, out swapNumShaker);
         }
 
-        private void dataGridArrShellSort_Loaded(object sender, RoutedEventArgs e)
+        private void dataGridArrShellSort_Initialized(object sender, EventArgs e)
         {
-            buttonShellSort_Click(this, null);
-            Clear_all();
-            txt_box.Clear();
-        }
-
-        private void txt_box_Initialized(object sender, EventArgs e)
-        {
-            txt_box.Text = "10";
+            arrShellSort = new int[10];
+            for (int i = 0; i < 10; i++)
+                arrShellSort[i] = arrDefault[i];
+            ArrShellSort(arrShellSort, out sravnShellSort, out swapNumShell);  
         }
     }
 }
