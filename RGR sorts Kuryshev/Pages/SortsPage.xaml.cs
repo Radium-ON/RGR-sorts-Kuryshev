@@ -48,9 +48,9 @@ namespace RGR_sorts_Kuryshev.Pages
         public Home()
         {
             InitializeComponent();
-            dataGridArrDefault.ItemsSource = data_firstCollection;
-            dataGridArrShakerSort.ItemsSource = data_secondCollection;
-            dataGridArrShellSort.ItemsSource = data_thirdCollection;
+            DataGridArrDefault.ItemsSource = data_firstCollection;
+            DataGridArrShakerSort.ItemsSource = data_secondCollection;
+            DataGridArrShellSort.ItemsSource = data_thirdCollection;
             DataGridResults.ItemsSource = data_resultsCollection;
             image.Source = new DrawingImage(draw);
             errorMessage.Title = "Ошибка";
