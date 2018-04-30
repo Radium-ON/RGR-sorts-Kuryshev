@@ -34,7 +34,7 @@
 
                     <TextBox x:Name="txt_box" Grid.Column="0" Grid.Row="1" Margin="5" Text="Количество элементов"
                                     ToolTip="Введите количество элементов"
-                                    GotFocus="txt_box_GotFocus" />
+                                    GotFocus="txt_box_GotFocus" Initialized="txt_box_Initialized"/>
 
                     <Button x:Name="buttonGraphics" Margin="5" Grid.Row="1" Grid.Column="2" Content="Графики"        
                                     Click="buttonGraphics_Click" Visibility="Hidden"/>
@@ -59,25 +59,28 @@
                     <Label Grid.Column="2" Grid.Row="3" Content="Сортировка Шелла"
                     HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
-                    <DataGrid x:Name="DataGridArrDefault" Grid.Column="0" Grid.Row="4" Margin="5"
+                    <DataGrid x:Name="dataGridArrDefault" Grid.Column="0" Grid.Row="4" Margin="5"
                     HeadersVisibility="None" CanUserSortColumns="False" CanUserDeleteRows="False" AutoGenerateColumns="False"
-                    CanUserAddRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                    CanUserAddRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False"
+                              Loaded="dataGridArrDefault_Loaded">
                         <DataGrid.Columns>
                             <DataGridTextColumn Width="*" Binding="{Binding Path=first_arr}"/>
                         </DataGrid.Columns>
                     </DataGrid>
 
-                    <DataGrid x:Name="DataGridArrShakerSort" Grid.Column="1" Grid.Row="4" Margin="5"
+                    <DataGrid x:Name="dataGridArrShakerSort" Grid.Column="1" Grid.Row="4" Margin="5"
                     HeadersVisibility="None" CanUserSortColumns="False" CanUserDeleteRows="False" AutoGenerateColumns="False"
-                    CanUserAddRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                    CanUserAddRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False"
+                              Loaded="dataGridArrShakerSort_Loaded">
                         <DataGrid.Columns>
                             <DataGridTextColumn Width="*" CanUserReorder="False" CanUserResize="False" IsReadOnly="True" Binding="{Binding Path=second_arr}"/>
                         </DataGrid.Columns>
                     </DataGrid>
 
-                    <DataGrid x:Name="DataGridArrShellSort" Grid.Column="2" Grid.Row="4" Margin="5"
+                    <DataGrid x:Name="dataGridArrShellSort" Grid.Column="2" Grid.Row="4" Margin="5"
                     HeadersVisibility="None" CanUserSortColumns="False" CanUserDeleteRows="False" AutoGenerateColumns="False"
-                    CanUserAddRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                    CanUserAddRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False"
+                              Loaded="dataGridArrShellSort_Loaded">
                         <DataGrid.Columns>
                             <DataGridTextColumn Width="*" CanUserReorder="False" CanUserResize="False" IsReadOnly="True" Binding="{Binding Path=third_arr}"/>
                         </DataGrid.Columns>

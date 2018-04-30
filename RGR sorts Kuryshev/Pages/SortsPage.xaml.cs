@@ -48,16 +48,15 @@ namespace RGR_sorts_Kuryshev.Pages
         public Home()
         {
             InitializeComponent();
-            DataGridArrDefault.ItemsSource = data_firstCollection;
-            DataGridArrShakerSort.ItemsSource = data_secondCollection;
-            DataGridArrShellSort.ItemsSource = data_thirdCollection;
+            dataGridArrDefault.ItemsSource = data_firstCollection;
+            dataGridArrShakerSort.ItemsSource = data_secondCollection;
+            dataGridArrShellSort.ItemsSource = data_thirdCollection;
             DataGridResults.ItemsSource = data_resultsCollection;
             image.Source = new DrawingImage(draw);
             errorMessage.Title = "Ошибка";
         }
         void Clear_all()
         {
-
             data_firstCollection.Clear();
             data_secondCollection.Clear();
             data_thirdCollection.Clear();
@@ -380,6 +379,28 @@ namespace RGR_sorts_Kuryshev.Pages
         void txt_box_GotFocus(object sender, RoutedEventArgs e)
         {
             txt_box.Text = "";
+        }
+
+        private void dataGridArrDefault_Loaded(object sender, RoutedEventArgs e)
+        {
+            buttonCreateArrDefault_Click(this, null);
+        }
+
+        private void dataGridArrShakerSort_Loaded(object sender, RoutedEventArgs e)
+        {
+            buttonShakerSort_Click(this, null);
+        }
+
+        private void dataGridArrShellSort_Loaded(object sender, RoutedEventArgs e)
+        {
+            buttonShellSort_Click(this, null);
+            Clear_all();
+            txt_box.Clear();
+        }
+
+        private void txt_box_Initialized(object sender, EventArgs e)
+        {
+            txt_box.Text = "10";
         }
     }
 }
