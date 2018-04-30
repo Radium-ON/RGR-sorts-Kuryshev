@@ -12,7 +12,7 @@
             <mui:ModernTab.Links>
                 <!-- TODO: set @Source -->
                 <mui:Link DisplayName="сортировка" Source="/Pages/SortsPage.xaml"/>
-                <mui:Link DisplayName="результаты" Source="/Pages/SortsResultPage.xaml"/>
+                <!--<mui:Link DisplayName="результаты" Source="/Pages/SortsResultPage.xaml"/> открыть после реализации MVVM-->
             </mui:ModernTab.Links>
         </mui:ModernTab>
     </Grid>
